@@ -1,0 +1,98 @@
+.container{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-left: 20px;
+    padding-right: 20px;
+   
+}
+
+.example-card {
+  
+  height: 300px;
+  mix-blend-mode:normal;
+}
+.card-list{
+   
+}
+
+.page-title{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.image-box{
+    display: flex;
+    justify-content: center; 
+    height: fit-content;
+    margin: 12%;
+background-repeat: no-repeat;
+}
+
+.image-style{
+    height: 100px
+    
+}
+.card-desc{
+    max-height: 35px;
+    overflow: hidden;
+  text-overflow:clip;
+  
+}
+.card-desc:hover{
+    overflow:visible;
+    
+}
+.Mat-title{
+    font-size: medium;
+    font-weight:bold;
+    inline-size:30pcx;
+}
+.mat-header{
+    height: 50px;
+}
+.mat-action{
+    
+}
+
+.mat-dialog-actions{
+    opacity: 0;
+    justify-content: center;
+    padding:  10px;
+    position: absolute;
+    top: 150px;
+    left: 45px;
+    color: rgb(255, 255, 255);
+}
+
+.example-card:hover{
+    filter:brightness(0.9);
+}
+
+.example-card:hover .mat-dialog-actions{
+    opacity: 1;
+}
+
+.hover-title{
+    font-weight: bolder;
+    font-size: large;
+    color:rgb(114, 40, 0);
+    margin: 4px;
+}
+
+.icon-btn{
+    border-radius: 50%;
+    color: rgb(167, 3, 69);
+    border: 0px;
+    background-color: aliceblue;
+}
+.mat-button{
+    position: absolute;
+    top: 60%;
+    left: 50px;
+    border: 1px solid;
+    opacity: 0;
+    color: rgb(167, 3, 69);
+}
+.example-card:hover .mat-button{
+    opacity: 1;
+}

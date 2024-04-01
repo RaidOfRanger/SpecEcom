@@ -1,0 +1,80 @@
+.container{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding-left: 20px;
+    padding-right: 20px;
+   
+}
+
+.example-card {
+  
+  height: 300px;
+  mix-blend-mode:normal;
+}
+.card-list{
+   
+}
+
+.page-title{
+    display: flex;
+    justify-content: center;
+    
+}
+
+.image-box{
+    display: flex;
+    justify-content: center; 
+    height: fit-content;
+    margin: 12%;
+background-repeat: no-repeat;
+}
+
+.image-style{
+    height: 100px
+    
+}
+.card-desc{
+    max-height: 35px;
+    overflow: hidden;
+  text-overflow:clip;
+  
+}
+.card-desc:hover{
+    overflow:visible;
+    
+}
+.Mat-title{
+    font-size: medium;
+    font-weight:bold;
+    inline-size:30pcx;
+}
+.mat-header{
+    height: 50px;
+}
+.mat-action{
+    display: inline;
+    justify-items: center;
+}
+
+.mat-dialog-actions{
+    opacity: 0;
+    justify-content: space-between;
+    position: absolute;
+    top: 150px;
+    left: 85px;
+    color: rgb(255, 255, 255);
+
+}
+
+.example-card:hover{
+    filter:brightness(40%);
+}
+
+.example-card:hover .mat-dialog-actions{
+    opacity: 1;
+    /* filter:contrast(100%); */
+    color: rgb(51, 246, 12);
+}
+
+.scorllcard{
+    
+}

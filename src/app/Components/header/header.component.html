@@ -1,0 +1,24 @@
+<div class="sticky-header " >
+    <mat-toolbar class="container" >
+        <h1>SpecEcom</h1>
+        <div *ngIf="menutype === 'default'" class="sbar">
+            <input type="text" [(ngModel)]="searchtext" (input)="searchtra()" class="search" placeholder="search" />
+            <mat-icon class="icon">search</mat-icon>
+        </div>
+        <div [ngSwitch]="menutype">
+            <ul *ngSwitchCase="'default'" class="menu-list">
+                <li><a routerLink="">Home</a></li>
+                <li><a routerLink="Seller-auth">Seller</a></li>
+                <li><a routerLink="user-login">login</a></li>
+                <li><a routerLink="">Cart(0)</a></li>
+            </ul>
+            <ul *ngSwitchCase="'seller'" class="menu-list">
+                <li><a routerLink="">Home</a></li>
+                <li><a routerLink="show-product">Products</a></li>
+                <li><a>Seller</a></li>
+                <li><a routerLink="">Cart(0)</a></li>
+                <li><a (click)="seller_logout()">logout</a></li>
+            </ul>
+        </div>
+    </mat-toolbar>
+</div>

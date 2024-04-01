@@ -1,0 +1,35 @@
+<div class="spacer">
+<div class="block">
+    <h1 class="page-title">Add Product</h1>
+    <form class="container" [formGroup]="AddProductform" (ngSubmit)="OnAddProduct()">
+        <mat-form-field>
+            <mat-label>Product Name</mat-label>
+            <input matInput placeholder="Enter Product Name" formControlName="Product_name" type="text">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Product Price</mat-label>
+            <input matInput placeholder="Product Price" formControlName="Product_price" type="number">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Product Color</mat-label>
+            <input matInput placeholder="Product Color" formControlName="Product_color" type="text">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Image Url</mat-label>
+            <input matInput placeholder="Image Url" formControlName="img_url" type="text">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Product Category</mat-label>
+            <input matInput placeholder="Product Catagory" formControlName="Product_category" type="text">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Enter Description</mat-label>
+            <textarea matInput placeholder="Enter Description" formControlName="Product_description" type="text"></textarea>
+        </mat-form-field>
+            <input  type="file" (change)="onFileSelected($event)" />
+        
+        <button mat-raised-button class="btn-style" type="submit">Add Product</button><br>
+
+    </form>
+</div>
+</div>
