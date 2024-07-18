@@ -8,16 +8,18 @@
         <div [ngSwitch]="menutype">
             <ul *ngSwitchCase="'default'" class="menu-list">
                 <li><a routerLink="">Home</a></li>
-                <li><a routerLink="Seller-auth">Seller</a></li>
-                <li><a routerLink="user-login">login</a></li>
-                <li><a routerLink="">Cart(0)</a></li>
+                <li><a routerLink="my-product">Seller</a></li>
+                <!-- <li><a routerLink="user-login">login</a></li> -->
+                <!-- <li><a routerLink="">Cart(0)</a></li> -->
+                <li><a (click)="logout()">logout</a></li>
             </ul>
             <ul *ngSwitchCase="'seller'" class="menu-list">
                 <li><a routerLink="">Home</a></li>
-                <li><a routerLink="show-product">Products</a></li>
-                <li><a>Seller</a></li>
-                <li><a routerLink="">Cart(0)</a></li>
-                <li><a (click)="seller_logout()">logout</a></li>
+                <li><a routerLink="my-product">Seller</a></li>
+                <li><a routerLink="add-product-seller">Add Products</a></li>
+                
+                <!-- <li><a routerLink="">Cart(0)</a></li> -->
+                <li><a (click)="logout()">logout</a></li>
             </ul>
         </div>
     </mat-toolbar>

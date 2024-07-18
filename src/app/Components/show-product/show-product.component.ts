@@ -16,12 +16,20 @@ export class ShowProductComponent implements OnInit {
 
   mover: boolean = false
 
+  current_owner :string = ''
+
   constructor(private product: LogindataService, private route: Router) { }
 
   ngOnInit(): void {
-     this.product.test().subscribe((result:any)=>{
+
+    let data = localStorage.getItem("user_login_data")
+    if(data){
+        let data1 = JSON.parse(data)
+        this.current_owner = data1.email
+    }
+     this.product.GetAllProduct().subscribe((result:any)=>{
       
-      this.productList =  result.products
+      this.productList =  result
       
     },err=>{
       console.log(err);

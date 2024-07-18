@@ -17,10 +17,9 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HomeComponent } from './Components/home/home.component';
 
-import { SellerAuthComponent } from './Components/seller-auth/seller-auth.component';
-import { SpecHomeComponent } from './Components/spec-home/spec-home.component';
+
+
 import { UserLoginComponent } from './Components/user-login/user-login.component';
-import { SellerLogoutComponent } from './Components/seller-logout/seller-logout.component';
 import { AddSellerProductComponent } from './Components/add-seller-product/add-seller-product.component';
 import {MatCardModule} from '@angular/material/card';
 import { ShowProductComponent } from './Components/show-product/show-product.component';
@@ -40,10 +39,7 @@ import {MatTableModule} from '@angular/material/table';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SellerAuthComponent,
-    SpecHomeComponent,
     UserLoginComponent,
-    SellerLogoutComponent,
     AddSellerProductComponent,
     ShowProductComponent,
    

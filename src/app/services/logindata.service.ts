@@ -12,36 +12,32 @@ export class LogindataService {
 
   IsLoggedIn = new BehaviorSubject<boolean>(false)
 
-  url = 'http://localhost:3000/'
+  url = 'http://localhost:3000/spec/'
   constructor(private http: HttpClient, private router: Router) { }
 
-  signupsubmit(data: any) {
-    console.log(data)
-    return this.http.post(this.url+'seller', data)
-  }
+
   OnRefresh() {
     this.router.navigate(['add-product-seller'])
   }
 
-  login(data:any){
-    return this.http.get(this.url+"?email="+data.email+"&passowrd="+data.password)
-  }
-
+ 
+//done
   usersignupsubmit(data: any) {
     console.log(data)
-    return this.http.post(this.url+"user_login_data", data)
+    return this.http.post(this.url+"register", data)
   }
+  //done
 
   userlogin(data:any){
-    return this.http.get(this.url+"user_login_data?email="+data.email+"&passowrd="+data.password)
+    return this.http.post(this.url+"login",data,{responseType:'text'})
   }
-
+//done
   AddProduct(data: any){
-    return this.http.post(this.url+"Product_Data",data)
+    return this.http.post(this.url+"add_product",data)
   }
-
+//done
   GetAllProduct(){
-    return this.http.get(this.url+"Product_Data")
+    return this.http.get(this.url+"fetch_product")
   }
 
   //image upload
@@ -59,6 +55,7 @@ export class LogindataService {
   }
 
   test(): Observable<any>{
+    
     return  this.http.get('https://dummyjson.com/products')
   }
 

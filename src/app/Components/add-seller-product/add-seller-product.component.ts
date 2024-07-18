@@ -12,42 +12,45 @@ import { LogindataService } from 'src/app/services/logindata.service';
 })
 export class AddSellerProductComponent implements OnInit {
 
-  //addproductform: FormGroup ;
-  selectedFile: File | null = null;
+
+  data1:any
 
   AddProductform = new FormGroup({
-    Product_name: new FormControl('',[Validators.required]),
-    Product_price: new FormControl('',[Validators.required]),
-    Product_color: new FormControl('',[Validators.required]),
-    img_url: new FormControl('',[Validators.required]),
-    Product_category: new FormControl('',[Validators.required]),
-    Product_description: new FormControl('',[Validators.required]),
-    img: new FormControl('',[Validators.required]),
+    title: new FormControl('',[Validators.required]),
+    description: new FormControl('',[Validators.required]),
+    price: new FormControl('',[Validators.required]),
+    discountPercentage: new FormControl('',[Validators.required]),
+    rating: new FormControl('',[Validators.required]),
+    stock: new FormControl('',[Validators.required]),
+    brand: new FormControl('',[Validators.required]),
+    category: new FormControl('',[Validators.required]),
+    thumbnail: new FormControl('',[Validators.required]),
+    images: new FormControl(''),
+    owner: new FormControl(''),
   })
 
   constructor(private logindata: LogindataService, private router: Router,private http: HttpClient) {
-    // this.addproductform = this.fb.group({
-    //   Product_name: ['',Validators.required],
-    //   Product_price: ['', Validators.required],
-    //   Product_color: ['', Validators.required],
-    //   img_url: ['', Validators.required],
-    //   Product_category: ['', Validators.required],
-    //   Product_description: ['', Validators.required],
-    //   img: ['',Validators.required]
-    // })
+
    }
 
   ngOnInit(): void {
+    let data = localStorage.getItem("user_login_data")
+    if(data){
+         this.data1 = JSON.parse(data)
+         console.log(this.data1);     
+        
+    }
+
   }
 
   OnAddProduct(){
-    
-    console.log("check",this.AddProductform);
+
+    this.AddProductform.value.owner = this.data1.email
     this.logindata.AddProduct(this.AddProductform.value)
     .subscribe(
       (result)=>{
         this.logindata.IsLoggedIn.next(true)
-        this.router.navigate(['show-product']);
+        this.router.navigate(['my-product']);
         console.log("data send")
       },
       err=>{
@@ -57,23 +60,23 @@ export class AddSellerProductComponent implements OnInit {
     
   }
 
-  onFileSelected(event: any) {
+  // onFileSelected(event: any) {
 
-    this.selectedFile = event.target.files[0];
-    if(this.selectedFile){
-      console.log(this.selectedFile);
-      const reader = new FileReader()
-      reader.readAsDataURL(this.selectedFile)
-      reader.onload=(event: any)=>{
-        console.log(event.target?.result);
-        var r =event.target?.result
-        this.AddProductform.patchValue({img: r})
-        console.log('checker',this.AddProductform);
+  //   this.selectedFile = event.target.files[0];
+  //   if(this.selectedFile){
+  //     console.log(this.selectedFile);
+  //     const reader = new FileReader()
+  //     reader.readAsDataURL(this.selectedFile)
+  //     reader.onload=(event: any)=>{
+  //       console.log(event.target?.result);
+  //       var r =event.target?.result
+  //       this.AddProductform.patchValue({img: r})
+  //       console.log('checker',this.AddProductform);
         
-      }
-    }
+  //     }
+  //   }
     
-  }
+  // }
 
 
   

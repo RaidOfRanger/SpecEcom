@@ -26,6 +26,9 @@ export class UserLoginComponent implements OnInit {
   constructor(private logindata: LogindataService, private router: Router) { }
 
   ngOnInit(): void {
+    if(this.logindata.IsLoggedIn){
+      this.router.navigate([''])
+    }
     
   }
 
@@ -40,7 +43,7 @@ export class UserLoginComponent implements OnInit {
         console.log("data send")
       },
       err=>{
-        console.log("dat not send",err)
+        console.log("data not send",err)
       }
     )
     
@@ -57,13 +60,13 @@ export class UserLoginComponent implements OnInit {
 
   OnSubmituserLogin(){
     this.logindata.userlogin(this.loginform.value)
-    .subscribe(result=>{
-        localStorage.setItem('user_login_data',JSON.stringify(result))
+    .subscribe((res)=>{
+        localStorage.setItem('user_login_data',JSON.stringify(this.loginform1.value))
         this.logindata.IsLoggedIn.next(true)
         //userlogin page enter here
         this.router.navigate(['']);
         console.log("data send")
-    },err=>{
+    },(error)=>{
       console.log("enter valid data")
     })
   }

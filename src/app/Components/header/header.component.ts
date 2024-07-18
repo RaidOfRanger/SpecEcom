@@ -38,13 +38,9 @@ export class HeaderComponent implements OnInit {
       
       if(val.url){
         console.log("jj",val.url);
-        if(localStorage.getItem('Seller') ){
-          this.menutype = "seller"
-        } 
-        if(val.url.includes('spec') ){
-          this.menutype = "seller"
-        }
-        if(val.url == "/spec-home" || val.url == "/add-product-seller"){
+      
+        
+        if(val.url == "/my-product" || val.url == "/add-product-seller" || val.url == "/user-login" ){
           this.menutype = "seller"
         }else{
           this.menutype = "default"
@@ -53,9 +49,10 @@ export class HeaderComponent implements OnInit {
     })
   }
 
-  seller_logout(){
-    localStorage.removeItem('Seller')
-    this.router.navigate([''])
+  logout(){
+    localStorage.removeItem('user_login_data')
+    this.router.navigate(['user-login'])
+    this.loginservice.IsLoggedIn.next(false)
   }
   
   searchtra(){

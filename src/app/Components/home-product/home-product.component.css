@@ -6,7 +6,7 @@
 }
 
 .example-card {
-  
+  width: 200px;
   height: 300px;
   mix-blend-mode:normal;
 }
@@ -23,13 +23,14 @@
 .image-box{
     display: flex;
     justify-content: center; 
-    height: fit-content;
+    height: 100px;
     margin: 12%;
-background-repeat: no-repeat;
+    background-repeat: no-repeat;
 }
 
 .image-style{
-    height: 100px
+    height: 100px,
+
     
 }
 .card-desc{

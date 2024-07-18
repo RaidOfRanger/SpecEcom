@@ -4,29 +4,50 @@
     <form class="container" [formGroup]="AddProductform" (ngSubmit)="OnAddProduct()">
         <mat-form-field>
             <mat-label>Product Name</mat-label>
-            <input matInput placeholder="Enter Product Name" formControlName="Product_name" type="text">
+            <input matInput placeholder="Enter Product Name" formControlName="title" type="text">
         </mat-form-field><br>
         <mat-form-field>
-            <mat-label>Product Price</mat-label>
-            <input matInput placeholder="Product Price" formControlName="Product_price" type="number">
+            <mat-label>description</mat-label>
+            <textarea matInput placeholder="Product description" formControlName="description" ></textarea>
         </mat-form-field><br>
         <mat-form-field>
-            <mat-label>Product Color</mat-label>
-            <input matInput placeholder="Product Color" formControlName="Product_color" type="text">
+            <mat-label>Product price</mat-label>
+            <input matInput placeholder="Product price" formControlName="price" type="Number">
         </mat-form-field><br>
         <mat-form-field>
-            <mat-label>Image Url</mat-label>
-            <input matInput placeholder="Image Url" formControlName="img_url" type="text">
+            <mat-label>discount Percentage</mat-label>
+            <input matInput placeholder="discountPercentage" formControlName="discountPercentage" type="Number">
         </mat-form-field><br>
         <mat-form-field>
-            <mat-label>Product Category</mat-label>
-            <input matInput placeholder="Product Catagory" formControlName="Product_category" type="text">
+            <mat-label>Product Rating</mat-label>
+            <input matInput placeholder="Product rating" formControlName="rating" type="Number">
         </mat-form-field><br>
         <mat-form-field>
-            <mat-label>Enter Description</mat-label>
-            <textarea matInput placeholder="Enter Description" formControlName="Product_description" type="text"></textarea>
-        </mat-form-field>
-            <input  type="file" (change)="onFileSelected($event)" />
+            <mat-label>Available stock</mat-label>
+            <textarea matInput placeholder="stock" formControlName="stock" type="Number"></textarea>
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Product brand</mat-label>
+            <input matInput placeholder="Enter Product brand" formControlName="brand" type="text">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Product category</mat-label>
+            <input matInput placeholder="Enter Product category" formControlName="category" type="text">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Product thumbnail</mat-label>
+            <input matInput placeholder="Enter Product thumbnail" formControlName="thumbnail" type="text">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Product owner</mat-label>
+            <input matInput placeholder="Enter Product owner" formControlName="owner" type="text">
+        </mat-form-field><br>
+        <mat-form-field>
+            <mat-label>Product Images</mat-label>
+            <input matInput placeholder="Enter Product images" formControlName="images" type="text">
+        </mat-form-field><br>
+        
+            <!-- <input  type="file" (change)="onFileSelected($event)" /> -->
         
         <button mat-raised-button class="btn-style" type="submit">Add Product</button><br>
 

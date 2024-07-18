@@ -16,20 +16,32 @@ export class HomeProductComponent implements OnInit {
 
   cart : any = []
 
+  current_owner :string = ''
+
   constructor(private product: LogindataService, private route: Router , public searchService: SearchService) { 
+    
+  }
+
+  ngOnInit(): void {
+
+    
+    //this.searchtext = this.search.search
     this.searchService.searchQuery$.subscribe(data=>{
       this.searchtext =data
       
     })
-  }
 
-  ngOnInit(): void {
-    //this.searchtext = this.search.search
-    console.log(this.searchtext);
+    let data = localStorage.getItem("user_login_data")
+    if(data){
+        let data1 = JSON.parse(data)
+        this.current_owner = data1.email
+    }
     
-    this.product.test().subscribe((result:any)=>{
+    
+    this.product.GetAllProduct().subscribe((result:any)=>{
       
-      this.productList =  result.products
+      this.productList =  result
+      console.log(result)
       
     },err=>{
       console.log(err);
