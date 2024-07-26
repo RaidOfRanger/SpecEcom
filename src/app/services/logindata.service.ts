@@ -12,7 +12,7 @@ export class LogindataService {
 
   IsLoggedIn = new BehaviorSubject<boolean>(false)
 
-  url = 'http://localhost:3000/spec/'
+  url = 'https://specapi-2.onrender.com/spec/'
   constructor(private http: HttpClient, private router: Router) { }
 
 
